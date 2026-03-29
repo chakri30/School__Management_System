@@ -1,216 +1,255 @@
-<h1 align="center">
-    SCHOOL MANAGEMENT SYSTEM
-</h1>
+# 🎓 School Management System
 
-<h3 align="center">
-Streamline school management, class organization, and add students and faculty.<br>
-Seamlessly track attendance, assess performance, and provide feedback. <br>
-Access records, view marks, and communicate effortlessly.
-</h3>
+A full-stack web application built with the **MERN stack** to streamline school operations — manage classes, students, teachers, attendance, exam results, and notices all in one place.
 
-<p>
-  <a href="https://youtu.be/ol650KwQkgY?si=rKcboqSv3n-e4UbC">Youtube Video</a>
-</p>
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=vercel)](https://your-app.vercel.app)
+[![Backend](https://img.shields.io/badge/Backend-Render-green?style=for-the-badge&logo=render)](https://your-api.onrender.com)
 
-<p>
-  <a href="https://www.linkedin.com/in/yogndrr/">LinkedIn</a>
-</p>
+---
 
+## 📸 Screenshots
 
-# About
+> Admin Dashboard — colorful stats, quick actions, recent activity
 
-The School Management System is a web-based application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It aims to streamline school management, class organization, and facilitate communication between students, teachers, and administrators.
+![Dashboard](https://via.placeholder.com/800x400?text=Admin+Dashboard+Screenshot)
 
-## Features
+> Students Page — card-based layout with search
 
-- **User Roles:** The system supports three user roles: Admin, Teacher, and Student. Each role has specific functionalities and access levels.
+![Students](https://via.placeholder.com/800x400?text=Students+Page+Screenshot)
 
-- **Admin Dashboard:** Administrators can add new students and teachers, create classes and subjects, manage user accounts, and oversee system settings.
+---
 
-- **Attendance Tracking:** Teachers can easily take attendance for their classes, mark students as present or absent, and generate attendance reports.
+## ✨ Features
 
-- **Performance Assessment:** Teachers can assess students' performance by providing marks and feedback. Students can view their marks and track their progress over time.
+### 👨‍💼 Admin
+- Register and manage the school
+- Add/view/delete Classes, Subjects, Students, Teachers
+- Publish Notices for the school
+- View student complaints
+- Dashboard with live stats (total students, classes, teachers)
 
-- **Data Visualization:** Students can visualize their performance data through interactive charts and tables, helping them understand their academic performance at a glance.
+### 👨‍🎓 Student
+- Login with Roll Number and Name
+- View attendance records per subject
+- View exam marks and performance
+- Submit complaints
+- View school notices
 
-- **Communication:** Users can communicate effortlessly through the system. Teachers can send messages to students and vice versa, promoting effective communication and collaboration.
+### 👩‍🏫 Teacher
+- Login with email and password
+- Take student attendance
+- Provide exam marks
+- View assigned class and subject
 
-## Technologies Used
+---
 
-- Frontend: React.js, Material UI, Redux
-- Backend: Node.js, Express.js
-- Database: MongoDB
+## 🛠️ Tech Stack
 
-<br>
+| Layer | Technology |
+|---|---|
+| **Frontend** | React.js, Material UI, Redux, Styled Components |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB, Mongoose |
+| **Authentication** | JWT (JSON Web Tokens), Bcrypt |
+| **Deployment** | Vercel (Frontend), Render (Backend), MongoDB Atlas (DB) |
 
-# Installation
+---
 
-Clone the project:
+## 🔐 Security Improvements (over original)
+
+This project includes several backend improvements beyond the original open-source version:
+
+- ✅ **JWT Authentication** — All login endpoints (Admin, Student, Teacher) now return signed JWT tokens
+- ✅ **Bcrypt Password Hashing** — Admin passwords are now hashed before saving (original stored plain text)
+- ✅ **Input Validation** — All API routes validated using `express-validator`
+- ✅ **Rate Limiting** — API protected with `express-rate-limit` (100 requests per 15 min)
+- ✅ **Morgan Logging** — HTTP request logging added for debugging and monitoring
+- ✅ **Improved CORS** — CORS configured with environment-specific origin
+- ✅ **Centralized Error Handling** — Global error handler middleware added
+- ✅ **Modular Folder Structure** — Separated `config/db.js` and `middleware/errorHandler.js`
+
+---
+
+## 📁 Project Structure
 
 ```
+School-Management-System/
+│
+├── backend/
+│   ├── config/
+│   │   └── db.js               # MongoDB connection
+│   ├── controllers/
+│   │   ├── admin-controller.js
+│   │   ├── student_controller.js
+│   │   ├── teacher-controller.js
+│   │   ├── class-controller.js
+│   │   ├── subject-controller.js
+│   │   ├── notice-controller.js
+│   │   └── complain-controller.js
+│   ├── middleware/
+│   │   └── errorHandler.js     # Global error handler
+│   ├── models/
+│   │   ├── adminSchema.js
+│   │   ├── studentSchema.js
+│   │   ├── teacherSchema.js
+│   │   ├── sclassSchema.js
+│   │   ├── subjectSchema.js
+│   │   ├── noticeSchema.js
+│   │   └── complainSchema.js
+│   ├── routes/
+│   │   └── route.js            # All API routes with validation
+│   ├── .env                    # Environment variables (not pushed)
+│   ├── .gitignore
+│   ├── index.js                # Entry point
+│   └── package.json
+│
+└── frontend/
+    ├── public/
+    ├── src/
+    │   ├── assets/
+    │   ├── components/
+    │   ├── pages/
+    │   │   ├── admin/
+    │   │   │   ├── classRelated/
+    │   │   │   ├── studentRelated/
+    │   │   │   ├── teacherRelated/
+    │   │   │   ├── subjectRelated/
+    │   │   │   ├── noticeRelated/
+    │   │   │   ├── AdminDashboard.js
+    │   │   │   ├── AdminHomePage.js
+    │   │   │   └── SideBar.js
+    │   │   ├── student/
+    │   │   └── teacher/
+    │   ├── redux/
+    │   ├── App.js
+    │   └── index.js
+    ├── .env                    # Environment variables (not pushed)
+    ├── .gitignore
+    └── package.json
+```
+
+---
+
+## ⚙️ Local Setup
+
+### Prerequisites
+Make sure you have these installed:
+- [Node.js](https://nodejs.org) (v16 or higher)
+- [Git](https://git-scm.com)
+- A [MongoDB Atlas](https://mongodb.com/atlas) account (free)
+
+---
+
+### Step 1 — Clone the repository
+```bash
 git clone https://github.com/chakri30/School_Management_System.git
+cd School_Management_System
 ```
 
-
-Open two terminals.
-
-Backend setup:
-
-```
+### Step 2 — Setup Backend
+```bash
 cd backend
 npm install
 ```
 
-Create a .env file in the backend folder. Add the following:
-
+Create a `.env` file inside the `backend` folder:
+```env
+MONGO_URL=mongodb+srv://<username>:<password>@cluster.mongodb.net/schooldb
+SECRET_KEY=your_random_secret_key
+PORT=8000
+FRONTEND_URL=http://localhost:3000
 ```
-MONGO_URL = mongodb://127.0.0.1/smsproject
-
-SECRET_KEY = 'secret123key'
-```
-
-Fill MONGO_URL using the instructions below. SECRET_KEY is any random string.
 
 Start the backend:
-
-```
+```bash
 npm start
 ```
+Backend runs at: `http://localhost:8000`
 
-Frontend setup:
+---
 
-```
+### Step 3 — Setup Frontend
+Open a new terminal:
+```bash
 cd frontend
 npm install
 ```
 
-Create a .env file in the frontend folder and add:
-
+Create a `.env` file inside the `frontend` folder:
+```env
+REACT_APP_BASE_URL=http://localhost:8000
 ```
-REACT_APP_BASE_URL=http://localhost:5000
-```
 
-If a .env file already exists and the line is commented out, remove the comment.
-
-```
+Start the frontend:
+```bash
 npm start
 ```
+Frontend runs at: `http://localhost:3000`
 
-Frontend runs at localhost:3000. Backend runs at localhost:5000.
+---
 
-# MONGO_URL instructions
+## 🚀 Deployment
 
-Use one of these two methods depending on whether you want a local development database or a cloud database.
+### Backend → [Render](https://render.com)
+| Setting | Value |
+|---|---|
+| Root Directory | `backend` |
+| Build Command | `npm install` |
+| Start Command | `node index.js` |
+| Environment Variables | `MONGO_URL`, `SECRET_KEY`, `PORT`, `FRONTEND_URL` |
 
-## Option 1 — Local MongoDB
+### Frontend → [Vercel](https://vercel.com)
+| Setting | Value |
+|---|---|
+| Root Directory | `frontend` |
+| Framework | Create React App |
+| Build Command | `npm run build` |
+| Environment Variables | `REACT_APP_BASE_URL` = your Render URL |
 
-You need two components: the MongoDB server and Compass.
+---
 
-Install MongoDB Community Server from <a href="https://mongodb.com/try/download/community">mongodb.com/try/download/community</a>. This install includes the mongod server. Install Compass from <a href="https://mongodb.com/try/download/compass">mongodb.com/try/download/compass</a>..
+## 🌐 API Endpoints
 
-Start the MongoDB service. On Windows or macOS the installer usually sets it to run automatically. If it is not running, you can start it manually:
+### Admin
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/AdminReg` | Register admin |
+| POST | `/AdminLogin` | Login admin |
+| GET | `/Admin/:id` | Get admin details |
 
-```
-mongod
-```
+### Student
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/StudentReg` | Register student |
+| POST | `/StudentLogin` | Login student |
+| GET | `/Students/:id` | Get all students |
+| GET | `/Student/:id` | Get student detail |
+| PUT | `/StudentAttendance/:id` | Mark attendance |
+| PUT | `/UpdateExamResult/:id` | Update exam marks |
 
-Open Compass. Connect using:
+### Teacher
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/TeacherReg` | Register teacher |
+| POST | `/TeacherLogin` | Login teacher |
+| GET | `/Teachers/:id` | Get all teachers |
+| GET | `/Teacher/:id` | Get teacher detail |
 
-```
-mongodb://127.0.0.1:27017/yourdbname
-```
+### Class, Subject, Notice, Complain
+All CRUD endpoints available for Classes, Subjects, Notices and Complaints.
 
-Replace yourdbname with any name. Use that full connection string as your MONGO_URL.
+---
 
-## Option 2 — MongoDB Atlas (cloud)
+## 👨‍💻 Author
 
-Create an Atlas account at <a href="https://mongodb.com/atlas">mongodb.com/atlas</a> and create a free cluster.
+**Chakri Chindiri**
+- GitHub: [@chakri30](https://github.com/chakri30)
 
-In the cluster page, select:
+---
 
-Database → Connect → Connect your application
+## 📄 License
 
-Atlas shows you a connection string:
+This project is open source and available under the [MIT License](LICENSE).
 
-```
-mongodb+srv://<user>:<password>@<cluster-url>/<dbname>?retryWrites=true&w=majority
-```
-
-Replace the placeholders. Use that full string as your MONGO_URL.
-
-Use Atlas if you plan to deploy the project.
-
-
-# Deployment
-
-There are multiple ways to deploy the project. Use any combination depending on how you prefer to manage the client and server.
-
-## Deploying the backend
-
-### Render
-
-Render works well for Express-based APIs and requires almost no infrastructure setup.
-
-1. Push your code to GitHub.
-2. Create a new Web Service in Render.
-3. Select your backend folder as the root.
-4. Set the build command to:
-
-```
-npm install
-```
-
-5. Set the start command to:
-
-```
-npm start
-```
-
-6. Add the required environment variables from your .env file (MONGO_URL and SECRET_KEY).
-
-Render automatically redeploys on every push.
-
-## Deploying the frontend
-
-### Netlify
-
-Netlify builds and serves the React application.
-
-Steps:
-
-1. Push your frontend folder to GitHub.
-2. Create a new Netlify project.
-3. Set the build command:
-
-```
-npm run build
-```
-
-4. Set the publish directory:
-
-```
-build
-```
-
-5. Add an environment variable if needed for the API endpoint:
-
-```
-REACT_APP_BASE_URL=https://your-backend-url
-```
-
-Netlify auto-builds on every push.
-
-### Vercel
-
-Vercel deploys React-based frontends easily. Same build command. Same publish directory.
-
-## Connecting frontend and backend
-
-After deploying both sides, set the frontend environment variable to point to your backend URL. For example:
-
-```
-REACT_APP_BASE_URL=https://your-backend.onrender.com
-```
-
-Rebuild the frontend when deploying to Netlify or Vercel.
+---
 

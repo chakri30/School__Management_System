@@ -164,12 +164,6 @@ const FieldValue = styled(Typography)`
   font-weight: 600 !important;
 `;
 
-const ReadonlyValue = styled(Typography)`
-  font-size: 0.98rem !important;
-  color: #6b7280 !important;
-  font-family: 'Palatino Linotype', serif !important;
-  font-style: italic !important;
-`;
 
 const darkFieldSx = {
   flex: 1,

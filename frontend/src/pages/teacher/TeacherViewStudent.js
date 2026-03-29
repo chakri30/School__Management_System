@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
-import PersonIcon from '@mui/icons-material/Person';
 import SchoolIcon from '@mui/icons-material/School';
 import ClassIcon from '@mui/icons-material/Class';
 import BadgeIcon from '@mui/icons-material/Badge';
@@ -190,7 +189,7 @@ const TeacherViewStudent = () => {
     const navigate = useNavigate();
     const params = useParams();
     const dispatch = useDispatch();
-    const { currentUser, userDetails, response, loading, error } = useSelector((s) => s.user);
+    const { currentUser, userDetails, loading } = useSelector((s) => s.user);
 
     const address = 'Student';
     const studentID = params.id;

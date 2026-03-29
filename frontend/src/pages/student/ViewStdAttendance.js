@@ -31,10 +31,6 @@ const fadeUp = keyframes`
   to   { opacity: 1; transform: translateY(0); }
 `;
 
-const progressFill = keyframes`
-  from { width: 0; }
-  to   { width: 100%; }
-`;
 
 /* ─── Styled Components ───────────────────────────────────── */
 const PageWrapper = styled(Box)`
