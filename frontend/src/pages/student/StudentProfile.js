@@ -215,7 +215,6 @@ const fieldSx = {
 
 /* ─── Component ───────────────────────────────────────────── */
 const StudentProfile = () => {
-  const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
 
   const sclassName = currentUser?.sclassName;

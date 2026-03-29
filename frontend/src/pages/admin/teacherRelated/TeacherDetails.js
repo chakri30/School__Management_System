@@ -7,7 +7,6 @@ import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import ClassIcon from '@mui/icons-material/Class';
 import BookIcon from '@mui/icons-material/Book';
 import TimerIcon from '@mui/icons-material/Timer';
-import EmailIcon from '@mui/icons-material/Email';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AddIcon from '@mui/icons-material/Add';
 import styled, { keyframes } from 'styled-components';
@@ -21,7 +20,7 @@ const TeacherDetails = () => {
     const navigate = useNavigate();
     const params = useParams();
     const dispatch = useDispatch();
-    const { loading, teacherDetails, error } = useSelector((state) => state.teacher);
+    const { loading, teacherDetails } = useSelector((state) => state.teacher);
 
     const teacherID = params.id;
 

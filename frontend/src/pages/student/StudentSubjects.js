@@ -25,10 +25,6 @@ const fadeUp = keyframes`
   to   { opacity: 1; transform: translateY(0); }
 `;
 
-const pulse = keyframes`
-  0%, 100% { box-shadow: 0 0 0 0 rgba(63,81,181,0.18); }
-  50%       { box-shadow: 0 0 0 8px rgba(63,81,181,0); }
-`;
 
 /* ─── Styled Components ───────────────────────────────────── */
 const PageWrapper = styled(Box)`

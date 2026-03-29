@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getAllTeachers } from '../../../redux/teacherRelated/teacherHandle';
-import { Box, InputBase } from '@mui/material';
+import { InputBase } from '@mui/material';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import SearchIcon from '@mui/icons-material/Search';
-import SchoolIcon from '@mui/icons-material/School';
+
 import ClassIcon from '@mui/icons-material/Class';
 import BookIcon from '@mui/icons-material/Book';
-import AddIcon from '@mui/icons-material/Add';
+
 import Popup from '../../../components/Popup';
 import styled, { keyframes } from 'styled-components';
 
