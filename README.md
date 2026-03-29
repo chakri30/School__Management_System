@@ -10,6 +10,8 @@ A full-stack web application built with the **MERN stack** to streamline school 
 ## 📸 Screenshots
 
 > Admin Dashboard — colorful stats, quick actions, recent activity
+> <img width="2878" height="1447" alt="image" src="https://github.com/user-attachments/assets/75c34233-04f4-4d09-90e8-ab135c9d4e7d" />
+
 
 ![Dashboard](https://via.placeholder.com/800x400?text=Admin+Dashboard+Screenshot)
 
