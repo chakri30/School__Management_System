@@ -2,8 +2,8 @@
 
 A full-stack web application built with the **MERN stack** to streamline school operations — manage classes, students, teachers, attendance, exam results, and notices all in one place.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=vercel)](https://your-app.vercel.app)
-[![Backend](https://img.shields.io/badge/Backend-Render-green?style=for-the-badge&logo=render)](https://your-api.onrender.com)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=vercel)](https://school-management-system-tlvk.vercel.app)
+[![Backend](https://img.shields.io/badge/Backend-Render-green?style=for-the-badge&logo=render)](https://school-management-system-rnf0.onrender.com)
 
 ---
 
